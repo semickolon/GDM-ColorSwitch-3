@@ -56,13 +56,16 @@ func _get_dead():
 
 func switch_color():
 	randomize()
+	var new_color_idx := -1
 	var new_color := _color
 	
 	while new_color == _color:
-		var idx := randi() % Constants.COLOR_PALETTE.size()
-		new_color = Constants.COLOR_PALETTE[idx]
+		new_color_idx = randi() % Constants.COLOR_PALETTE.size()
+		new_color = Constants.COLOR_PALETTE[new_color_idx]
 	
 	_color = new_color
 	modulate = _color
 	death_particles.modulate = _color
-
+	
+	collision_layer = ((1 << 5) - 1) ^ (1 << (new_color_idx + 1))
+	collision_mask = collision_layer
