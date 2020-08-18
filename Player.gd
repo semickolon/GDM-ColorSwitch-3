@@ -12,7 +12,9 @@ onready var death_particles = $DeathParticles
 var velocity := Vector2.ZERO
 var score := 0 setget _set_score, _get_score
 var dead := false setget , _get_dead
+
 var _color: Color = modulate
+var _jumped := false
 
 func _ready():
 	switch_color()
@@ -22,21 +24,27 @@ func _physics_process(delta):
 		_move(delta)
 
 func _move(delta):
-	velocity.y += gravity * delta
+	if _jumped:
+		velocity.y += gravity * delta
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = -jump
+		_jumped = true
 	
 	var collision = move_and_collide(velocity * delta)
-	if collision == null:
-		return
 	
-	var collider = collision.collider
-	
-	if collider.get_class() == "Item":
-		collider.obtain(self)
-	else:
+	if collision != null:
+		var collider = collision.collider
+		
+		if collider.get_class() == "Item":
+			collider.obtain(self)
+		else:
+			_die()
+	elif _below_floor():
 		_die()
+
+func _below_floor() -> bool:
+	return get_global_transform_with_canvas().origin.y > get_viewport().size.y
 
 func _die():
 	dead = true
