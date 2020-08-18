@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal died()
+signal score_changed(score)
 
 export var gravity := 100.0
 export var jump := 100.0
@@ -9,6 +10,7 @@ onready var sprite = $Sprite
 onready var death_particles = $DeathParticles
 
 var velocity := Vector2.ZERO
+var score := 0 setget _set_score, _get_score
 var dead := false setget , _get_dead
 var _color: Color = modulate
 
@@ -33,7 +35,6 @@ func _move(delta):
 	
 	if collider.get_class() == "Item":
 		collider.obtain(self)
-		collider.queue_free()
 	else:
 		_die()
 
@@ -42,6 +43,13 @@ func _die():
 	sprite.visible = false
 	death_particles.emitting = true
 	emit_signal("died")
+
+func _set_score(value):
+	score = value
+	emit_signal("score_changed", score)
+
+func _get_score():
+	return score
 
 func _get_dead():
 	return dead

@@ -9,5 +9,6 @@ func _ready():
 	mat.set_shader_param("color_3", Constants.COLOR_PALETTE[2])
 	mat.set_shader_param("color_4", Constants.COLOR_PALETTE[3])
 
-func obtain(player: Player):
+func _obtain(player: Player):
 	player.switch_color()
+	queue_free()
