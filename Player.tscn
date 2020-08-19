@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/impact.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/circle_64px.png" type="Texture" id=2]
+[ext_resource path="res://assets/hover.wav" type="AudioStream" id=3]
+[ext_resource path="res://Player.gd" type="Script" id=4]
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -1.80127, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+direction = Vector3( 1, 1, 1 )
+spread = 180.0
+gravity = Vector3( 0, 400, 0 )
+initial_velocity = 600.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.15
+scale_curve = SubResource( 5 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 32.249
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 288, 898 )
+scale = Vector2( 0.6, 0.6 )
+collision_layer = 29
+collision_mask = 29
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DeathParticles" type="Particles2D" parent="."]
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 6 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource( 7 )
+
+[node name="SfxJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="SfxDie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 4.0
