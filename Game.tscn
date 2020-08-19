@@ -87,6 +87,10 @@ shape = SubResource( 7 )
 position = Vector2( 0, 1024 )
 script = ExtResource( 6 )
 
+[node name="OnDieTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="UI"]
