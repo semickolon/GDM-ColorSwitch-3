@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://fonts/FredokaOne-Regular-64.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/FredokaOne-Regular-42.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/play_button.png" type="Texture" id=3]
 [ext_resource path="res://PostPlay.gd" type="Script" id=4]
 [ext_resource path="res://fonts/FredokaOne-Regular-32.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/tada.ogg" type="AudioStream" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -98,7 +99,7 @@ margin_left = 234.0
 margin_top = 233.0
 margin_right = 341.0
 margin_bottom = 281.0
-rect_rotation = 3.97219
+rect_rotation = -1.60998
 rect_pivot_offset = Vector2( 53, 24 )
 size_flags_horizontal = 4
 custom_styles/panel = SubResource( 3 )
@@ -143,3 +144,6 @@ rect_min_size = Vector2( 128, 128 )
 size_flags_horizontal = 4
 texture_normal = ExtResource( 3 )
 expand = true
+
+[node name="SfxTada" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )

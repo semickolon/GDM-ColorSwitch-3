@@ -8,6 +8,8 @@ export var jump := 500.0
 
 onready var sprite = $Sprite
 onready var death_particles = $DeathParticles
+onready var sfx_jump = $SfxJump
+onready var sfx_die = $SfxDie
 
 var velocity := Vector2.ZERO
 var score := 0 setget _set_score, _get_score
@@ -30,6 +32,7 @@ func _move(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = -jump
 		_jumped = true
+		sfx_jump.play()
 	
 	var collision = move_and_collide(velocity * delta)
 	
@@ -50,6 +53,8 @@ func _die():
 	dead = true
 	sprite.visible = false
 	death_particles.emitting = true
+	
+	sfx_die.play()
 	emit_signal("died")
 
 func _set_score(value):

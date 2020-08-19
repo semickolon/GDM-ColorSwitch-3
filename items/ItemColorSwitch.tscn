@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/item_color_switch.png" type="Texture" id=1]
 [ext_resource path="res://items/ItemColorSwitch.gd" type="Script" id=2]
 [ext_resource path="res://FourColor.gd" type="Script" id=3]
 [ext_resource path="res://assets/FourColor.shader" type="Shader" id=4]
+[ext_resource path="res://assets/pop.wav" type="AudioStream" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
@@ -32,3 +33,6 @@ script = ExtResource( 3 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="SfxObtain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )

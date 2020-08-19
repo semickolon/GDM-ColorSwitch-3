@@ -6,6 +6,7 @@ onready var score_label = $VBoxContainer/ScoreLabel
 onready var high_score_label = $VBoxContainer/HighScoreLabel
 onready var new_high_score = $VBoxContainer/NewHighScore
 onready var play_btn = $VBoxContainer/PlayBtn
+onready var sfx_tada = $SfxTada
 
 var score: int = 0
 
@@ -19,6 +20,7 @@ func _ready():
 	new_high_score.visible = has_new_high_score
 	
 	if has_new_high_score:
+		sfx_tada.play()
 		_set_high_score(score)
 		high_score = score
 	

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bensound-funkyelement.ogg-50564052b99d26e36a1d04f40760758d.oggstr"
+
+[deps]
+
+source_file="res://assets/bensound-funkyelement.ogg"
+dest_files=[ "res://.import/bensound-funkyelement.ogg-50564052b99d26e36a1d04f40760758d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tada.ogg-b92ebae751b88b852112805453908a6d.oggstr"
+
+[deps]
+
+source_file="res://assets/tada.ogg"
+dest_files=[ "res://.import/tada.ogg-b92ebae751b88b852112805453908a6d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
