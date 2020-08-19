@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/obstacle_concentric_circles.png-14bb3c99075a654598e008e2a8ba3247.stex"
+path="res://.import/obstacle_donut.png-6f240542fd6911c912f417464f93b836.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/obstacle_concentric_circles.png"
-dest_files=[ "res://.import/obstacle_concentric_circles.png-14bb3c99075a654598e008e2a8ba3247.stex" ]
+source_file="res://assets/obstacle_donut.png"
+dest_files=[ "res://.import/obstacle_donut.png-6f240542fd6911c912f417464f93b836.stex" ]
 
 [params]
 

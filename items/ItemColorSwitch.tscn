@@ -5,7 +5,7 @@
 [ext_resource path="res://FourColor.gd" type="Script" id=3]
 [ext_resource path="res://assets/FourColor.shader" type="Shader" id=4]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
 shader_param/color_1 = Color( 0.980392, 0.882353, 0, 1 )
 shader_param/color_2 = Color( 0.564706, 0.0509804, 1, 1 )
@@ -13,7 +13,7 @@ shader_param/color_3 = Color( 1, 0.00392157, 0.505882, 1 )
 shader_param/color_4 = Color( 0.196078, 0.858824, 0.941176, 1 )
 shader_param/mask = ExtResource( 1 )
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 radius = 32.5
 
 [node name="ItemColorSwitch" type="StaticBody2D"]
@@ -22,11 +22,13 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+top_offset = 32
+bottom_offset = 32
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-shape = SubResource( 3 )
+shape = SubResource( 2 )

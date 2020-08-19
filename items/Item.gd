@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends "res://LevelUnit.gd"
 
 const Player = preload("res://Player.gd")
 

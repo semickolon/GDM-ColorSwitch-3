@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://obstacles/ObstacleInfinity.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 33.0373, 0, -33.0373, 0, -51, -100, 0.33371, -52.7262, -0.33371, 52.7262, -172, 0, -33.0373, 0, 33.0373, 0, -51, 100, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="ObstacleInfinity" type="Node2D"]
+script = ExtResource( 1 )
+top_offset = 100
+bottom_offset = 100
+
+[node name="PathL" type="Path2D" parent="."]
+position = Vector2( -4, 0 )
+curve = SubResource( 1 )
+
+[node name="PathR" type="Path2D" parent="."]
+position = Vector2( 4, 0 )
+scale = Vector2( -1, 1 )
+curve = SubResource( 1 )

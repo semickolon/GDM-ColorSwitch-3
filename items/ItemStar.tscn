@@ -35,6 +35,8 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+top_offset = 34
+bottom_offset = 34
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
