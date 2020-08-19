@@ -3,8 +3,8 @@ extends KinematicBody2D
 signal died()
 signal score_changed(score)
 
-export var gravity := 100.0
-export var jump := 100.0
+export var gravity := 1500.0
+export var jump := 500.0
 
 onready var sprite = $Sprite
 onready var death_particles = $DeathParticles
