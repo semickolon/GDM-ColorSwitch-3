@@ -135,8 +135,11 @@ __meta__ = {
 
 [node name="PauseScreen" type="PanelContainer" parent="UI"]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -576.0
+margin_right = -576.0
 custom_styles/panel = SubResource( 8 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -144,6 +147,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="UI/PauseScreen"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 472.0
 margin_right = 576.0
 margin_bottom = 551.0

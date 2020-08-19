@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Stats",
+"language": "GDScript",
+"path": "res://Stats.gd"
+} ]
 _global_script_class_icons={
-
+"Stats": ""
 }
 
 [application]
@@ -22,6 +27,7 @@ config/icon="res://assets/icon.png"
 [autoload]
 
 Constants="*res://Constants.gd"
+SceneSwitcher="*res://SceneSwitcher.gd"
 
 [display]
 
